@@ -17,6 +17,7 @@ import { CustomStyleDirectiveDirective } from './custom-style-directive.directiv
 import {HttpClientModule} from '@angular/common/http'
 import{AdminModule} from './admin/admin.module'
 import {UserModule} from './user/user.module'
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
