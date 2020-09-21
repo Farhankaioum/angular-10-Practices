@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewContainerRef, ComponentFactoryResolver } from '@angular/core';
+import { UserListComponent } from './user-list/user-list.component';
 import {UserServiceService} from './user-service.service'
 
 @Component({
@@ -8,15 +9,31 @@ import {UserServiceService} from './user-service.service'
 })
 export class AppComponent {
   title = 'blog app'
-  data;
+ 
   parentFunction(data){
     console.log(data)
   }
-  constructor(private user:UserServiceService){
-    //console.log(this.user.getData())
-    this.user.getData().subscribe(data=>{
-      console.warn(data);
-      this.data = data
-    })
+  constructor(
+    private vcr:ViewContainerRef,
+    private cfr:ComponentFactoryResolver)
+    {
+    }
+
+  async loadAdmin()
+  {
+    this.vcr.clear();
+    const {AdminlistComponent} = await import('./adminlist/adminlist.component');
+    this.vcr.createComponent(
+      this.cfr.resolveComponentFactory(AdminlistComponent)
+    )
+  }
+
+  async loadUser()
+  {
+    this.vcr.clear();
+    const {UserlistComponent} = await import('./userlist/userlist.component');
+    this.vcr.createComponent(
+      this.cfr.resolveComponentFactory(UserlistComponent)
+    )
   }
 }

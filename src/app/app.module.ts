@@ -18,6 +18,8 @@ import {HttpClientModule} from '@angular/common/http'
 import{AdminModule} from './admin/admin.module'
 import {UserModule} from './user/user.module'
 import { from } from 'rxjs';
+import { AdminlistComponent } from './adminlist/adminlist.component';
+import { UserlistComponent } from './userlist/userlist.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { from } from 'rxjs';
     HeaderComponent,
     FooterComponent,
     PageNotFoundComponent,
-    CustomStyleDirectiveDirective
+    CustomStyleDirectiveDirective,
+    AdminlistComponent,
+    UserlistComponent
   ],
   imports: [
     BrowserModule,
