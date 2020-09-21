@@ -19,6 +19,11 @@ export class AppComponent {
     {
     }
 
+  SaveValue(formValue)
+  {
+      console.log(formValue)
+  }
+
   async loadAdmin()
   {
     this.vcr.clear();
@@ -36,4 +41,6 @@ export class AppComponent {
       this.cfr.resolveComponentFactory(UserlistComponent)
     )
   }
+
+  
 }
