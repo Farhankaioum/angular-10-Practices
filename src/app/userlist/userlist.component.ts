@@ -8,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class UserlistComponent implements OnInit {
 
   constructor() { }
-
+  conponentName = "test";
+  sum(a, b){
+    return a + b;
+  }
   ngOnInit(): void {
   }
 

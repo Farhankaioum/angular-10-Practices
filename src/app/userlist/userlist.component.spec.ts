@@ -22,4 +22,22 @@ describe('UserlistComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  // Few custom unit testing
+
+  // testing property
+  it("testing title", () => {
+    expect(component.conponentName).toBe("test");
+  })
+  // testing method
+  it("testing function", ()=> {
+    expect(component.sum(40, 60)).toBe(100)
+  })
+
+  // testing html specific element using class name
+  it("testing html element", () => {
+    const data = fixture.nativeElement;
+    expect(data.querySelector(".some").textContext).toContain("user")
+  })
+
 });
